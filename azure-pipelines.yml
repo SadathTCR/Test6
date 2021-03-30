@@ -1,0 +1,11 @@
+trigger:
+  branches:
+    include: [master, test-me-*]
+  tags:
+    include: ['*']
+
+jobs:
+- template: job--python-tox.yml
+  parameters:
+    coverage: false
+    toxenvs: [py27, py35, py36, py37, py38, py39, py310, pypy, pypy3, docs]
